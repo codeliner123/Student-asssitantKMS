@@ -48,31 +48,3 @@ const todayLabel = document.querySelector('#today-label');
 if (todayLabel) {
   todayLabel.textContent = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' }).format(new Date());
 }
-
-const jobList = document.querySelector('#job-list');
-function renderJobs(jobs) {
-  if (!jobList || !jobs.length) return;
-  jobList.replaceChildren(...jobs.slice(0, 4).map((job, index) => {
-    const row = document.createElement('div');
-    row.className = 'job';
-    const company = document.createElement('span');
-    company.className = `company${index % 2 ? ' coral' : ''}`;
-    company.textContent = job.company.slice(0, 1).toUpperCase();
-    const details = document.createElement('div');
-    const title = document.createElement('strong');
-    title.textContent = job.title;
-    const metadata = document.createElement('small');
-    metadata.textContent = `${job.company} · ${job.location}`;
-    details.append(title, metadata);
-    const match = document.createElement('span');
-    match.className = 'match';
-    match.textContent = `${job.match}% match`;
-    row.append(company, details, match);
-    return row;
-  }));
-}
-
-fetch('/api/jobs')
-  .then((response) => response.ok ? response.json() : Promise.reject(new Error('Jobs unavailable')))
-  .then(({ jobs }) => renderJobs(jobs))
-  .catch(() => {});
