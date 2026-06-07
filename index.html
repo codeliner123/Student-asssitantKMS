@@ -1,15 +1,140 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EduPath AI student career intelligence dashboard" />
+    <title>EduPath AI — Career Intelligence</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-    <title>EduPath AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="EduPath AI home">
+          <span class="brand-mark"><span>✦</span></span>
+          <span><strong>EduPath</strong><em>AI</em></span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <p class="nav-label">MAIN MENU</p>
+          <a class="nav-item active" href="#dashboard"><span>⌂</span> Dashboard</a>
+          <a class="nav-item" href="#resume"><span>▤</span> Resume Analyzer</a>
+          <a class="nav-item" href="#quiz"><span>◇</span> Skill Assessment</a>
+          <a class="nav-item" href="#github"><span>◉</span> GitHub Analyzer</a>
+          <a class="nav-item" href="#roadmap"><span>♧</span> Career Roadmap</a>
+          <p class="nav-label nav-space">INSIGHTS</p>
+          <a class="nav-item" href="#skills"><span>⌁</span> Skill Graph</a>
+          <a class="nav-item" href="#jobs"><span>♙</span> Job Insights</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="progress-card">
+            <div class="progress-icon">✦</div>
+            <div><strong>Profile Strength</strong><small>Complete your profile</small></div>
+            <b>68%</b>
+            <div class="progress-track"><i style="width: 68%"></i></div>
+          </div>
+          <a class="nav-item" href="#settings"><span>⚙</span> Settings</a>
+          <div class="user-card">
+            <div class="avatar">AS</div>
+            <div><strong>Alex Student</strong><small>Computer Science</small></div>
+            <span>⋮</span>
+          </div>
+        </div>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="mobile-menu" aria-label="Toggle menu">☰</button>
+          <label class="search"><span>⌕</span><input placeholder="Search skills, roles, resources..." /></label>
+          <div class="header-actions">
+            <button class="icon-btn" aria-label="Notifications">♧<i></i></button>
+            <button class="ask-btn"><span>✦</span> Ask EduPath AI</button>
+          </div>
+        </header>
+
+        <div class="content" id="dashboard">
+          <section class="welcome">
+            <div>
+              <p class="eyebrow"><span></span> YOUR CAREER COMMAND CENTER</p>
+              <h1>Good morning, Alex <span>👋</span></h1>
+              <p>Let's turn your potential into a career plan. You're making great progress!</p>
+            </div>
+            <div class="date-card"><span>▣</span><div><small>TODAY</small><strong id="today-label">Monday, May 19</strong></div></div>
+          </section>
+
+          <section class="hero-card">
+            <div class="hero-copy">
+              <p class="eyebrow light">✦ AI-POWERED GUIDANCE</p>
+              <h2>Your path to becoming a<br /><span>Frontend Developer</span></h2>
+              <p>Based on your profile, you're <strong>68% ready</strong> for your target role. Focus on the right skills and get job-ready faster.</p>
+              <div class="hero-actions">
+                <button class="primary-btn" data-action="roadmap">View your roadmap <span>→</span></button>
+                <button class="ghost-btn" data-action="skills">Explore skill gaps <span>⌁</span></button>
+              </div>
+            </div>
+            <div class="readiness">
+              <div class="orb"><strong>68<small>%</small></strong><span>Role readiness</span></div>
+              <div class="spark s1">✦</div><div class="spark s2">✧</div><div class="spark s3">✦</div>
+            </div>
+          </section>
+
+          <section class="metrics">
+            <article><div class="metric-icon purple">▤</div><div><small>RESUME SCORE</small><h3>78<span>/100</span></h3><p class="up">↗ 12% <em>from last review</em></p></div></article>
+            <article><div class="metric-icon green">◈</div><div><small>SKILLS MATCHED</small><h3>14<span>/21</span></h3><p>7 skills left to master</p></div></article>
+            <article><div class="metric-icon orange">◉</div><div><small>GITHUB ACTIVITY</small><h3>Good</h3><p class="up">↗ 23 commits <em>this month</em></p></div></article>
+            <article><div class="metric-icon pink">◎</div><div><small>LEARNING STREAK</small><h3>12<span> days</span></h3><p>Keep it going! 🔥</p></div></article>
+          </section>
+
+          <section class="grid-main">
+            <article class="panel journey">
+              <div class="panel-title"><div><p class="eyebrow">YOUR JOURNEY</p><h3>Career Roadmap Progress</h3></div><button class="text-btn">View full roadmap →</button></div>
+              <div class="phase-tabs"><button class="done">✓</button><i></i><button class="done">✓</button><i></i><button class="current">3</button><i></i><button>4</button></div>
+              <div class="phase-labels"><span>Foundation<small>Completed</small></span><span>Core Skills<small>Completed</small></span><span>Build & Apply<small>In progress</small></span><span>Level Up<small>Upcoming</small></span></div>
+              <div class="current-task">
+                <div class="task-check">✓</div>
+                <div><p>CURRENT FOCUS</p><strong>Build a React portfolio project</strong><small>Showcase your frontend skills with a real-world application</small></div>
+                <div class="task-progress"><b>65%</b><div><i style="width:65%"></i></div></div>
+              </div>
+            </article>
+
+            <article class="panel skills-panel">
+              <div class="panel-title"><div><p class="eyebrow">SKILL ANALYSIS</p><h3>Your Skill Gaps</h3></div><button class="dots">⋯</button></div>
+              <p class="muted">Top skills to focus on for Frontend Developer roles</p>
+              <div class="skill-row"><div><strong>TypeScript</strong><small>High priority</small></div><span class="tag red">Missing</span></div>
+              <div class="skill-row"><div><strong>Testing (Jest)</strong><small>High priority</small></div><span class="tag yellow">Partial</span></div>
+              <div class="skill-row"><div><strong>Next.js</strong><small>Medium priority</small></div><span class="tag red">Missing</span></div>
+              <button class="wide-btn">View all skill gaps <span>→</span></button>
+            </article>
+          </section>
+
+          <section class="grid-bottom">
+            <article class="panel activity">
+              <div class="panel-title"><div><p class="eyebrow">KEEP MOMENTUM</p><h3>Continue Learning</h3></div><button class="text-btn">View all →</button></div>
+              <div class="course-row"><div class="course-icon blue">⚛</div><div><strong>React Advanced Patterns</strong><small>Frontend Masters · 68% complete</small><div class="mini-track"><i style="width:68%"></i></div></div><button>▶</button></div>
+              <div class="course-row"><div class="course-icon violet">TS</div><div><strong>TypeScript Fundamentals</strong><small>Udemy · 32% complete</small><div class="mini-track"><i style="width:32%"></i></div></div><button>▶</button></div>
+            </article>
+            <article class="panel opportunity">
+              <div class="panel-title"><div><p class="eyebrow">OPPORTUNITIES</p><h3>Recommended for you</h3></div></div>
+              <div class="job"><span class="company">S</span><div><strong>Frontend Developer Intern</strong><small>Stripe · Remote</small></div><span class="match">92% match</span></div>
+              <div class="job"><span class="company coral">A</span><div><strong>Junior React Developer</strong><small>Airbnb · New York, NY</small></div><span class="match">87% match</span></div>
+            </article>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <div class="assistant" aria-live="polite">
+      <button class="assistant-toggle" aria-label="Open EduPath AI assistant">✦</button>
+      <section class="assistant-box">
+        <header><div><span>✦</span><strong>EduPath AI</strong><small>Your career mentor</small></div><button aria-label="Close assistant">×</button></header>
+        <div class="chat"><p>👋 Welcome to EduPath AI! I'm your personal career intelligence assistant.</p><p>What's your target job role or career goal?</p></div>
+        <form><input aria-label="Ask EduPath AI" placeholder="Type your answer..." /><button aria-label="Send message">↑</button></form>
+      </section>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>

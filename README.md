@@ -1,29 +1,15 @@
 # EduPath AI
 
-EduPath AI is a React + Vite + TypeScript career intelligence frontend for students and early-career professionals. It includes a dark responsive dashboard, resume analyzer, skill assessment, GitHub analyzer, career roadmap, skill graph, job insights, and a Gemini-powered floating chatbot.
+A polished static dashboard prototype for an AI-powered student career assistant. It presents resume readiness, career roadmap progress, skill gaps, active courses, job opportunities, and an expandable mentor chat.
 
 ## Run locally
 
 ```bash
-npm install
-cp .env.example .env
-npm run dev
+python3 -m http.server 4173
 ```
 
-Add your Gemini key to `.env` to enable AI features:
+Then open <http://localhost:4173>.
 
-```bash
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
-```
+## Configuration
 
-## Build
-
-```bash
-npm run build
-```
-
-## Notes
-
-- All product data is currently hardcoded mock data and marked with `// TODO: Replace with real API call` comments.
-- `.env` is ignored by Git; do not commit API keys.
-- Resume PDF parsing uses `pdfjs-dist`; TXT resumes use the browser File API.
+Copy `.env.example` to `.env` if a future server-side integration needs a Google API key. Never expose API keys in frontend JavaScript or commit them to source control.
